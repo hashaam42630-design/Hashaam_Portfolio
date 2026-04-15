@@ -1,0 +1,132 @@
+/* ============================================================
+   SKILLS SECTION STYLES
+   ============================================================ */
+
+.skills {
+  position: relative;
+}
+
+.skills__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.skills__header .section-divider {
+  margin: 0 auto 0;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  width: 80px;
+}
+
+/* ---- GRID ---- */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ---- SKILL CARD ---- */
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-gold-dim) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.skill-card:hover {
+  border-color: var(--border);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-card__top {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-card__icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.skill-card__name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.skill-card__desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ---- PROGRESS BAR ---- */
+.skill-card__bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-card__bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-card__bar-fill {
+  height: 100%;
+  width: var(--skill-level);
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
+  border-radius: 10px;
+  animation: fillBar 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: left;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to   { width: var(--skill-level); }
+}
+
+.skill-card__level {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--accent-gold);
+  min-width: 32px;
+  text-align: right;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 640px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
