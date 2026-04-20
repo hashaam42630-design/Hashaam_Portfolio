@@ -10,7 +10,7 @@ import './About.css';
 
 // EDIT: Change these numbers to reflect your experience
 const aboutStats = [
-  { number: '2+',  label: 'Years Experience' },
+  { number: '1+',  label: 'Years Experience' },
   { number: '20+', label: 'Projects Completed' },
   { number: '15+', label: 'Happy Clients' },
 ];
@@ -49,7 +49,7 @@ function About() {
               Keep it professional and concise (2-3 short paragraphs max).
             */}
             <p className="about__text">
-              I'm a Frontend Web Developer based in Pakistan, with over 2 years of
+              I'm a Frontend Web Developer based in Pakistan, with over 1+ years of
               experience building modern, responsive, and performance-optimized web
               applications. I specialize in turning creative concepts into clean,
               functional code.
